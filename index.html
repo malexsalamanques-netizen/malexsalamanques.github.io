@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Malex Salamanques · Design, Culture, Semiotics, Futures</title>
+<meta name="description" content="María Alexandra (Malex) Salamanques Amiel. British-Venezuelan creative strategist, semiotician and futures design consultant. Director at Space Doctors." />
+<meta name="author" content="Malex Salamanques" />
+<meta name="copyright" content="© 2026 Malex Salamanques. All rights reserved." />
+<meta property="og:title" content="Malex Salamanques" />
+<meta property="og:description" content="Design · Culture · Semiotics · Futures." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #e6e6e0;
+    --accent: #1a1a1a;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --maxw: 720px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  /* Language switcher */
+  .lang-switcher {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    display: flex;
+    gap: 6px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .lang-switcher button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 4px 6px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: uppercase;
+    transition: color 0.15s ease;
+  }
+
+  .lang-switcher button:hover { color: var(--ink); }
+
+  .lang-switcher button.active {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .lang-switcher .sep {
+    color: var(--rule);
+    user-select: none;
+  }
+
+  header.intro {
+    margin-bottom: 96px;
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .tagline.location {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  nav.top {
+    display: flex;
+    gap: 28px;
+    font-size: 0.9rem;
+    margin-bottom: 64px;
+    color: var(--muted);
+  }
+
+  nav.top a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  nav.top a:hover { color: var(--ink); }
+
+  section {
+    margin-bottom: 88px;
+    scroll-margin-top: 32px;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p {
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+
+  p.lead {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    transition: opacity 0.15s ease;
+  }
+
+  a:hover { opacity: 0.55; }
+
+  .project {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project:first-of-type { padding-top: 0; }
+  .project:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .project-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .project-desc {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+  }
+
+  .featured {
+    background: #f3f1ea;
+    margin: 0 -28px;
+    padding: 32px 28px;
+    border-radius: 4px;
+    border-bottom: none !important;
+  }
+
+  .featured + .project { padding-top: 28px; border-top: 1px solid var(--rule); }
+
+  .featured-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  ul.writing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.writing li {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  ul.writing li:last-child { border-bottom: none; }
+
+  ul.writing .title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  ul.writing .date {
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .writing-thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 3px;
+    background: #ece9e0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    text-align: center;
+    padding: 4px;
+  }
+
+  .writing-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .writing-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 2px;
+  }
+
+  .writing-link {
+    border-bottom: none;
+    color: var(--ink);
+    transition: opacity 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .writing-link:hover { opacity: 0.55; }
+
+  .writing-blurb {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .writing-readmore {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    align-self: flex-start;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .writing-readmore:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  @media (max-width: 540px) {
+    .writing-thumb { flex: 0 0 52px; width: 52px; height: 52px; }
+  }
+
+  .writing-source {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .talks-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .talk { display: block; }
+
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .talk-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .talk-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.3;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .talk-year {
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .talk-venue {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-list a {
+    border-bottom: none;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .contact-list a:hover { color: var(--ink); opacity: 1; }
+
+  .contact-list .label {
+    display: inline-block;
+    width: 90px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* Human Machine mark */
+  .signature-mark {
+    margin-top: 96px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .signature-mark svg {
+    width: 140px;
+    height: auto;
+    color: var(--ink);
+  }
+
+  footer {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  @media (max-width: 540px) {
+    .wrap { padding: 56px 24px 80px; }
+    .lang-switcher { top: 14px; right: 18px; }
+    header.intro { margin-bottom: 64px; }
+    section { margin-bottom: 64px; }
+    .project-head { flex-direction: column; gap: 4px; }
+    ul.writing li { flex-direction: column; gap: 4px; }
+    .featured { margin: 0 -20px; padding: 24px 20px; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button data-lang="en" class="active" aria-label="English">EN</button>
+    <span class="sep">·</span>
+    <button data-lang="es" aria-label="Español">ES</button>
+    <span class="sep">·</span>
+    <button data-lang="ca" aria-label="Català">CA</button>
+    <span class="sep">·</span>
+    <button data-lang="pt" aria-label="Português">PT</button>
+  </div>
+
+  <div class="wrap">
+
+    <nav class="top">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#writing" data-i18n="nav_writing">Writing</a>
+      <a href="#talks" data-i18n="nav_talks">Talks</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#pr" data-i18n="nav_pr">PR</a>
+    </nav>
+
+    <header class="intro">
+      <h1 class="name">Malex Salamanques</h1>
+      <p class="tagline" data-i18n="tagline">Design · Culture · Semiotics · Futures.</p>
+      <p class="tagline location">Brighton / Barcelona / Caracas</p>
+    </header>
+
+    <section id="about">
+      <h2 data-i18n="about_h">About</h2>
+      <p class="lead" data-i18n="bio_lead">
+        I'm a British-Venezuelan designer, semiotician and strategist. I work with the meaning systems underneath the surface of things and translate them into strategy, design and futures for brands and organisations.
+      </p>
+      <p data-i18n="bio_1">
+        I've been doing this for over twenty years, across Asia, the Middle East, Latam, Europe and the US.
+      </p>
+      <p data-i18n="bio_2">
+        Currently I'm Director at Space Doctors, working across Culture and Semiotics, Speculative Design, and Creative Strategy. Over the years I've also been part of building out Sensory Semiotics and Rituals Design as practice areas — both still in active development.
+      </p>
+      <p data-i18n="bio_3">
+        I'm a methodologist as much as a practitioner. Recoding™, a methodology I developed for taking semiotic analysis forward into specific creative guidelines, started in my MA research and has since become a generic term to describe this operation — little did I know I was actually coining a proper semiotic operation. More recently I've led the consolidation of the Speculative Strategy offer, running the first pilot projects on Harmful vs Effective Speculative Scenarios for an insect control brand and trialing approaches including speculative scenarios, rapid prototyping and backcasting.
+      </p>
+      <p data-i18n="bio_4">
+        Projects I've led include offering a Recoding™ platform to inform the creative strategy behind the global re-stage of Häagen-Dazs, the colour and spatial language of Meta's AR/VR/MR platforms, Samsung's Gen Z colour design strategy, Lipton's Tea Machine, Latam Futures Scenarios for Coca-Cola, and cultural research for WaterAid, Macmillan and Greenpeace.
+      </p>
+      <p data-i18n="bio_5">
+        At a break from Space Doctors I founded Mundano Estudio in Colombia, a design, branding and futures consultancy operating across Latam. Two of the brands I built there made it onto the list of Colombia's most loved brands. The work was recognised at Laus, the Latin American Design Awards and the Bienal Iberoamericana de Diseño.
+      </p>
+      <p data-i18n="bio_6">
+        In parallel I run Futureña, my independent observatory exploring the futures emerging from Latam.
+      </p>
+      <p data-i18n="bio_7">
+        I tend to create bodies of knowledge inadvertently. This site is an attempt to make them visible and attainable.
+      </p>
+    </section>
+
+    <section id="work">
+      <h2 data-i18n="work_h">Selected Work</h2>
+
+      <div class="project featured">
+        <span class="featured-tag" data-i18n="current_focus">Current focus</span>
+        <div class="project-head">
+          <h3 class="project-title">Futureña</h3>
+          <span class="project-meta" data-i18n="futurena_meta">2025 · ongoing</span>
+        </div>
+        <p class="project-desc" data-i18n="futurena_desc">
+          My personal and ongoing observatory at the intersection of semiotics and critical-speculative design, focused on Latin America. A space to track cultural signals and prototype the emerging imaginaries being authored from the region.
+        </p>
+        <a class="project-link" href="#" data-i18n="read_more">Read more →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3 class="project-title" data-i18n="greenpeace_title">The 7 Myths of Big Meat's Marketing</h3>
+          <span class="project-meta">2021</span>
+        </div>
+        <p class="project-desc" data-i18n="greenpeace_desc">
+          Spain cultural analysis for Greenpeace's investigation into the marketing strategies of the industrial meat sector. In collaboration with Stef Silva.
+        </p>
+        <a class="project-link" href="https://www.greenpeace.org/static/planet4-denmark-stateless/2021/11/dd8034bf-greenpeace_meat_report_en_final.pdf" target="_blank" rel="noopener" data-i18n="read_report">Read the report →</a>
+      </div>
+    </section>
+
+    <section id="writing">
+      <h2 data-i18n="writing_h">Writing</h2>
+      <ul class="writing">
+        <li>
+          <div class="writing-thumb">+ image</div>
+          <div class="writing-body">
+            <a class="writing-link" href="signals-in-context.html">
+              <span class="title" data-i18n="article_title">Signals in Context: Using Cultural Affordances to Shape Preferable Futures</span>
+            </a>
+          </div>
+          <span class="date">2025</span>
+        </li>
+        <li>
+          <div class="writing-thumb"><img src="rebellion-cover.avif" alt="REBELLION cover" loading="lazy" /></div>
+          <div class="writing-body">
+            <a class="writing-link" href="https://schoolofcriticaldesign.metalabel.com/socd_rebellion?variantId=2" target="_blank" rel="noopener">
+              <span class="title">CHRONOPOLITICS OF DISOBEDIENCE: INDIGENOUS RHYTHMS AND THE PRACTICE OF ACTIVE HOPE</span>
+              <span class="writing-source" data-i18n="rebellion_source">In REBELLION, School of Critical Design</span>
+            </a>
+            <p class="writing-blurb" data-i18n="rebellion_blurb">This essay reframes rebellion as a question of time. While resistance is usually imagined as outward gesture — protest in the streets, refusal of policy — I want to argue for a deeper disobedience aimed at the temporal architecture that makes collapse feel inevitable in the first place. Following Walter Mignolo's account of modernity as a temporal regime, I trace how Christian eschatology bequeathed a linear arc that the Enlightenment secularized into progress, capitalism scaled into speed, and accelerationism intensified into a wager on implosion. Against this single line, I turn to the plural temporalities of Indigenous Latin American thought: the Aymara placing of the past in front of the body, the Quechua pacha, the Kichwa Pachakuti as rupture-within-rhythm, Silvia Rivera Cusicanqui's spiralled history, Marisol de la Cadena's co-presence. Joanna Macy's active hope offers connective tissue: hope as participation rather than expectation. Rebellion becomes the act of reimagining time.</p>
+            <a class="writing-readmore" href="https://schoolofcriticaldesign.metalabel.com/socd_rebellion?variantId=2" target="_blank" rel="noopener" data-i18n="buy_zine">Buy the zine →</a>
+          </div>
+          <span class="date">2025</span>
+        </li>
+        <li>
+          <div class="writing-thumb">+ image</div>
+          <div class="writing-body">
+            <a class="writing-link" href="https://www.hilobrow.com/2021/06/16/semio-objects-21/" target="_blank" rel="noopener">
+              <span class="title">Semio Objects: Maria Lionza</span>
+              <span class="writing-source" data-i18n="hilobrow_source">Project:Object on HILOBROW</span>
+            </a>
+          </div>
+          <span class="date">2021</span>
+        </li>
+        <li>
+          <div class="writing-thumb">+ image</div>
+          <div class="writing-body">
+            <a class="writing-link" href="critical-speculative-design-semiotics-2017.pdf" target="_blank" rel="noopener">
+              <span class="title">Critical &amp; Speculative Design Practice and Semiotics: Meaning-Crafting for Futures Ready Brands</span>
+              <span class="writing-source" data-i18n="academic_source">Conference paper · PDF</span>
+            </a>
+          </div>
+          <span class="date">2017</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="talks">
+      <h2 data-i18n="talks_h">Talks &amp; Interviews</h2>
+      <div class="talks-grid" id="talks-grid">
+
+        <article class="talk">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/9eaetGrAvks"
+                    title="Futuros Endógenos (Parte 1)"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <div class="talk-meta">
+            <h3 class="talk-title">Futuros Endógenos (Parte 1)</h3>
+            <span class="talk-year">2021</span>
+          </div>
+          <p class="talk-venue">DBOX Radio · Exploradores de Futuros</p>
+        </article>
+
+        <article class="talk">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/dQT1LjLOEMg"
+                    title="Futuros Endógenos (Parte 2)"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <div class="talk-meta">
+            <h3 class="talk-title">Futuros Endógenos (Parte 2)</h3>
+            <span class="talk-year">2021</span>
+          </div>
+          <p class="talk-venue">DBOX Radio · Exploradores de Futuros</p>
+        </article>
+
+        <article class="talk">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/LCNSZU_irRU"
+                    title="Transforming Our Stories"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <div class="talk-meta">
+            <h3 class="talk-title">Transforming Our Stories</h3>
+            <span class="talk-year">2025</span>
+          </div>
+          <p class="talk-venue">Transforming Worlds with Carola Verschoor</p>
+        </article>
+
+        <article class="talk">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/2tr-UkVVO_g"
+                    title="Signals in Context: Using Cultural Affordances to Create Futures"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <div class="talk-meta">
+            <h3 class="talk-title">Signals in Context: Using Cultural Affordances to Create Futures</h3>
+            <span class="talk-year">2025</span>
+          </div>
+          <p class="talk-venue">Women Who Futures, with Gemma Jones</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="contact_h">Contact</h2>
+      <p data-i18n="contact_intro">
+        For collaborations, commissions or conversation:
+      </p>
+      <ul class="contact-list">
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/malex-salamanques-amiel-4364989" target="_blank" rel="noopener">linkedin.com/in/malex-salamanques-amiel</a></li>
+      </ul>
+    </section>
+
+    <section id="pr">
+      <h2 data-i18n="pr_h">PR</h2>
+      <ul class="writing">
+        <li>
+          <a class="writing-link" href="https://www.marketing-beat.co.uk/2024/04/08/opinion-creative-strategy/" target="_blank" rel="noopener">
+            <span class="title">Opinion: Why the key to great creative is great creative strategy</span>
+            <span class="writing-source" data-i18n="pr_source_cato">With Cato Hunt in Marketing Beat</span>
+          </a>
+          <span class="date">2024</span>
+        </li>
+        <li>
+          <a class="writing-link" href="https://www.creativeboom.com/insight/type-trends-for-2024/" target="_blank" rel="noopener">
+            <span class="title">Type trends for 2024 every designer needs to know about</span>
+            <span class="writing-source" data-i18n="pr_source_tom">By Tom May in Creative Boom</span>
+          </a>
+          <span class="date">2023</span>
+        </li>
+        <li>
+          <a class="writing-link" href="https://www.creativeboom.com/tips/challenges-facing-women-in-the-2022-design-industry-and-how-to-overcome-them/" target="_blank" rel="noopener">
+            <span class="title">Challenges facing women in the 2022 design industry, and how to overcome them</span>
+            <span class="writing-source" data-i18n="pr_source_katy">By Katy Cowan in Creative Boom</span>
+          </a>
+          <span class="date">2022</span>
+        </li>
+        <li>
+          <a class="writing-link" href="https://www.creativeboom.com/insight/insight-from-creative-leaders-on-the-big-lessons-of-2021/" target="_blank" rel="noopener">
+            <span class="title">How 2022 is shaping up for creativity with fascinating insight from industry leaders</span>
+            <span class="writing-source" data-i18n="pr_source_katy">By Katy Cowan in Creative Boom</span>
+          </a>
+          <span class="date">2021</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <span data-i18n="footer_rights">© 2026 Malex Salamanques. All rights reserved. All content on this site is protected by copyright.</span>
+      <span data-i18n="footer_permissions">For permissions, contact via LinkedIn.</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // ============================================================
+    // TRANSLATIONS
+    // To edit a translation: find the language key (es/ca/pt), find
+    // the string key, change the text. The English source lives in
+    // the HTML as the default fallback.
+    // ============================================================
+    var translations = {
+      es: {
+        nav_about: "Sobre mí",
+        nav_work: "Trabajos",
+        nav_writing: "Escritos",
+        nav_pr: "PR",
+        nav_talks: "Charlas",
+        nav_contact: "Contacto",
+        pr_h: "PR",
+        pr_source_cato: "Con Cato Hunt en Marketing Beat",
+        pr_source_tom: "Por Tom May en Creative Boom",
+        pr_source_katy: "Por Katy Cowan en Creative Boom",
+        hilobrow_source: "Project:Object en HILOBROW",
+        academic_source: "Ponencia · PDF",
+        rebellion_source: "En REBELLION, School of Critical Design",
+        buy_zine: "Comprar el zine →",
+        tagline: "Diseño · Cultura · Semiótica · Futuros.",
+        about_h: "Sobre mí",
+        bio_lead: "Soy diseñadora, semióloga y estratega, británica-venezolana. Trabajo con los sistemas de significado que están bajo la superficie de las cosas y los traduzco en estrategia, diseño y futuros para marcas y organizaciones.",
+        bio_1: "Llevo más de veinte años haciéndolo, en Asia, Oriente Medio, Latam, Europa y Estados Unidos.",
+        bio_2: "Actualmente soy directora en Space Doctors, donde trabajo entre Cultura y Semiótica, Diseño Especulativo y Estrategia Creativa. A lo largo de los años también he sido parte del desarrollo de Semiótica Sensorial y Diseño de Rituales como áreas de práctica — ambas aún en desarrollo activo.",
+        bio_3: "Soy tanto metodóloga como practicante. Recoding™, una metodología que desarrollé para llevar el análisis semiótico hacia pautas creativas específicas, nació en mi investigación de máster y desde entonces se ha convertido en un término genérico para describir esta operación — poco sabía yo que en realidad estaba acuñando una operación semiótica propia. Más recientemente he liderado la consolidación de la oferta de Estrategia Especulativa, dirigiendo los primeros proyectos piloto sobre Escenarios Especulativos Dañinos vs Efectivos para una marca de control de insectos y probando enfoques que incluyen escenarios especulativos, prototipado rápido y backcasting.",
+        bio_4: "Entre los proyectos que he liderado están ofrecer una plataforma Recoding™ para informar la estrategia creativa detrás del reposicionamiento global de Häagen-Dazs, el lenguaje cromático y espacial de las plataformas AR/VR/MR de Meta, la estrategia de diseño cromático para la Gen Z de Samsung, la Tea Machine de Lipton, los Escenarios de Futuros Latam para Coca-Cola, y la investigación cultural para WaterAid, Macmillan y Greenpeace.",
+        bio_5: "En una pausa de Space Doctors fundé Mundano Estudio en Colombia, una consultora de diseño, branding y futuros que operaba en Latam. Dos de las marcas que construí allí entraron en la lista de las marcas más queridas de Colombia. El trabajo fue reconocido en Laus, los Latin American Design Awards y la Bienal Iberoamericana de Diseño.",
+        bio_6: "En paralelo dirijo Futureña, mi observatorio independiente que explora los futuros que emergen desde Latam.",
+        bio_7: "Tiendo a crear cuerpos de conocimiento sin proponérmelo. Este sitio es un intento de hacerlos visibles y alcanzables.",
+        work_h: "Trabajos seleccionados",
+        current_focus: "Foco actual",
+        futurena_meta: "2025 · en curso",
+        futurena_desc: "Mi observatorio personal y en curso, en la intersección entre la semiótica y el diseño crítico-especulativo, centrado en América Latina. Un espacio para rastrear señales culturales y prototipar los imaginarios emergentes que se están escribiendo desde la región.",
+        read_more: "Leer más →",
+        greenpeace_title: "Los 7 mitos del marketing de la gran industria cárnica",
+        greenpeace_desc: "Análisis cultural de España para la investigación de Greenpeace sobre las estrategias de marketing del sector cárnico industrial. En colaboración con Stef Silva.",
+        read_report: "Leer el informe →",
+        writing_h: "Escritos",
+        article_title: "Señales en contexto: usar las affordances culturales para dar forma a futuros preferibles",
+        talks_h: "Charlas y entrevistas",
+        contact_h: "Contacto",
+        contact_intro: "Para colaboraciones, encargos o conversación:",
+        footer_rights: "© 2026 Malex Salamanques. Todos los derechos reservados. Todo el contenido de este sitio está protegido por copyright.",
+        footer_permissions: "Para permisos, contactar por LinkedIn."
+      },
+      ca: {
+        nav_about: "Sobre mi",
+        nav_work: "Treballs",
+        nav_writing: "Escrits",
+        nav_pr: "PR",
+        nav_talks: "Xerrades",
+        nav_contact: "Contacte",
+        pr_h: "PR",
+        pr_source_cato: "Amb Cato Hunt a Marketing Beat",
+        pr_source_tom: "Per Tom May a Creative Boom",
+        pr_source_katy: "Per Katy Cowan a Creative Boom",
+        hilobrow_source: "Project:Object a HILOBROW",
+        academic_source: "Ponència · PDF",
+        rebellion_source: "A REBELLION, School of Critical Design",
+        buy_zine: "Compra el zine →",
+        tagline: "Disseny · Cultura · Semiòtica · Futurs.",
+        about_h: "Sobre mi",
+        bio_lead: "Sóc dissenyadora, semiòloga i estratega, britànica-veneçolana. Treballo amb els sistemes de significat que hi ha sota la superfície de les coses i els tradueixo en estratègia, disseny i futurs per a marques i organitzacions.",
+        bio_1: "Fa més de vint anys que ho faig, a Àsia, l'Orient Mitjà, Latam, Europa i els Estats Units.",
+        bio_2: "Actualment sóc directora a Space Doctors, on treballo entre Cultura i Semiòtica, Disseny Especulatiu i Estratègia Creativa. Al llarg dels anys també he format part del desenvolupament de Semiòtica Sensorial i Disseny de Rituals com a àrees de pràctica — totes dues encara en desenvolupament actiu.",
+        bio_3: "Sóc tant metodòloga com practicant. Recoding™, una metodologia que vaig desenvolupar per portar l'anàlisi semiòtica cap a directrius creatives específiques, va néixer en la meva recerca de màster i des de llavors s'ha convertit en un terme genèric per descriure aquesta operació — poc sabia jo que en realitat estava encunyant una operació semiòtica pròpia. Més recentment he liderat la consolidació de l'oferta d'Estratègia Especulativa, dirigint els primers projectes pilot sobre Escenaris Especulatius Nocius vs Efectius per a una marca de control d'insectes i provant enfocaments que inclouen escenaris especulatius, prototipatge ràpid i backcasting.",
+        bio_4: "Entre els projectes que he liderat hi ha oferir una plataforma Recoding™ per informar l'estratègia creativa darrere del reposicionament global de Häagen-Dazs, el llenguatge cromàtic i espacial de les plataformes AR/VR/MR de Meta, l'estratègia de disseny cromàtic per a la Gen Z de Samsung, la Tea Machine de Lipton, els Escenaris de Futurs Latam per a Coca-Cola, i la recerca cultural per a WaterAid, Macmillan i Greenpeace.",
+        bio_5: "En una pausa de Space Doctors vaig fundar Mundano Estudio a Colòmbia, una consultora de disseny, branding i futurs que operava arreu de Latam. Dues de les marques que vaig construir allà van entrar a la llista de les marques més estimades de Colòmbia. El treball va ser reconegut als Laus, els Latin American Design Awards i la Biennal Iberoamericana de Disseny.",
+        bio_6: "En paral·lel dirigeixo Futureña, el meu observatori independent que explora els futurs que emergeixen des de Latam.",
+        bio_7: "Tendeixo a crear cossos de coneixement sense proposar-m'ho. Aquest lloc és un intent de fer-los visibles i assolibles.",
+        work_h: "Treballs seleccionats",
+        current_focus: "Focus actual",
+        futurena_meta: "2025 · en curs",
+        futurena_desc: "El meu observatori personal i en curs, en la intersecció entre la semiòtica i el disseny crític-especulatiu, centrat en Amèrica Llatina. Un espai per rastrejar senyals culturals i prototipar els imaginaris emergents que s'estan escrivint des de la regió.",
+        read_more: "Llegir més →",
+        greenpeace_title: "Els 7 mites del màrqueting de la gran indústria càrnia",
+        greenpeace_desc: "Anàlisi cultural d'Espanya per a la investigació de Greenpeace sobre les estratègies de màrqueting del sector carni industrial. En col·laboració amb Stef Silva.",
+        read_report: "Llegir l'informe →",
+        writing_h: "Escrits",
+        article_title: "Senyals en context: utilitzar les affordances culturals per donar forma a futurs preferibles",
+        talks_h: "Xerrades i entrevistes",
+        contact_h: "Contacte",
+        contact_intro: "Per a col·laboracions, encàrrecs o conversa:",
+        footer_rights: "© 2026 Malex Salamanques. Tots els drets reservats. Tot el contingut d'aquest lloc està protegit per copyright.",
+        footer_permissions: "Per a permisos, contactar per LinkedIn."
+      },
+      pt: {
+        nav_about: "Sobre mim",
+        nav_work: "Trabalhos",
+        nav_writing: "Escritos",
+        nav_pr: "PR",
+        nav_talks: "Palestras",
+        nav_contact: "Contacto",
+        pr_h: "PR",
+        pr_source_cato: "Com Cato Hunt na Marketing Beat",
+        pr_source_tom: "Por Tom May na Creative Boom",
+        pr_source_katy: "Por Katy Cowan na Creative Boom",
+        hilobrow_source: "Project:Object na HILOBROW",
+        academic_source: "Comunicação · PDF",
+        rebellion_source: "Em REBELLION, School of Critical Design",
+        buy_zine: "Comprar o zine →",
+        tagline: "Design · Cultura · Semiótica · Futuros.",
+        about_h: "Sobre mim",
+        bio_lead: "Sou designer, semioticista e estrategista, britânica-venezuelana. Trabalho com os sistemas de significado que estão sob a superfície das coisas e traduzo-os em estratégia, design e futuros para marcas e organizações.",
+        bio_1: "Faço isto há mais de vinte anos, na Ásia, no Médio Oriente, em Latam, na Europa e nos Estados Unidos.",
+        bio_2: "Atualmente sou diretora na Space Doctors, onde trabalho entre Cultura e Semiótica, Design Especulativo e Estratégia Criativa. Ao longo dos anos também fiz parte do desenvolvimento da Semiótica Sensorial e do Design de Rituais como áreas de prática — ambas ainda em desenvolvimento ativo.",
+        bio_3: "Sou tanto metodóloga como praticante. Recoding™, uma metodologia que desenvolvi para levar a análise semiótica para diretrizes criativas específicas, nasceu na minha investigação de mestrado e desde então tornou-se um termo genérico para descrever esta operação — pouco sabia eu que estava na verdade a cunhar uma operação semiótica própria. Mais recentemente liderei a consolidação da oferta de Estratégia Especulativa, dirigindo os primeiros projetos piloto sobre Cenários Especulativos Nocivos vs Eficazes para uma marca de controlo de insetos e testando abordagens que incluem cenários especulativos, prototipagem rápida e backcasting.",
+        bio_4: "Entre os projetos que liderei estão oferecer uma plataforma Recoding™ para informar a estratégia criativa por detrás do reposicionamento global da Häagen-Dazs, a linguagem cromática e espacial das plataformas AR/VR/MR da Meta, a estratégia de design cromático para a Gen Z da Samsung, a Tea Machine da Lipton, os Cenários de Futuros Latam para a Coca-Cola, e a investigação cultural para a WaterAid, Macmillan e Greenpeace.",
+        bio_5: "Numa pausa da Space Doctors fundei a Mundano Estudio na Colômbia, uma consultoria de design, branding e futuros que operava em Latam. Duas das marcas que construí lá entraram na lista das marcas mais amadas da Colômbia. O trabalho foi reconhecido nos Laus, nos Latin American Design Awards e na Bienal Iberoamericana de Diseño.",
+        bio_6: "Em paralelo dirijo a Futureña, o meu observatório independente que explora os futuros que emergem de Latam.",
+        bio_7: "Tenho tendência para criar corpos de conhecimento sem me propor a tal. Este site é uma tentativa de torná-los visíveis e alcançáveis.",
+        work_h: "Trabalhos selecionados",
+        current_focus: "Foco atual",
+        futurena_meta: "2025 · em curso",
+        futurena_desc: "O meu observatório pessoal e em curso, na intersecção entre a semiótica e o design crítico-especulativo, centrado na América Latina. Um espaço para rastrear sinais culturais e prototipar os imaginários emergentes que estão a ser escritos a partir da região.",
+        read_more: "Ler mais →",
+        greenpeace_title: "Os 7 mitos do marketing da grande indústria da carne",
+        greenpeace_desc: "Análise cultural de Espanha para a investigação da Greenpeace sobre as estratégias de marketing do setor da carne industrial. Em colaboração com Stef Silva.",
+        read_report: "Ler o relatório →",
+        writing_h: "Escritos",
+        article_title: "Sinais em contexto: usar as affordances culturais para dar forma a futuros preferíveis",
+        talks_h: "Palestras e entrevistas",
+        contact_h: "Contacto",
+        contact_intro: "Para colaborações, encomendas ou conversa:",
+        footer_rights: "© 2026 Malex Salamanques. Todos os direitos reservados. Todo o conteúdo deste site está protegido por direitos de autor.",
+        footer_permissions: "Para permissões, contactar via LinkedIn."
+      }
+    };
+
+    var copyrightLines = {
+      en: 'From malexsalamanques.com\n© 2026 Malex Salamanques. All rights reserved. Republication or substantial reproduction requires written permission.',
+      es: 'De malexsalamanques.com\n© 2026 Malex Salamanques. Todos los derechos reservados. La republicación o reproducción sustancial requiere permiso escrito.',
+      ca: "De malexsalamanques.com\n© 2026 Malex Salamanques. Tots els drets reservats. La republicació o reproducció substancial requereix permís escrit.",
+      pt: 'De malexsalamanques.com\n© 2026 Malex Salamanques. Todos os direitos reservados. A republicação ou reprodução substancial requer permissão escrita.'
+    };
+
+    var currentLang = 'en';
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      var dict = translations[lang];
+      var nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(function (node) {
+        var key = node.getAttribute('data-i18n');
+        if (dict && dict[key]) {
+          node.textContent = dict[key];
+        } else if (lang === 'en') {
+          // English uses the in-HTML default. Nothing to do, the
+          // text is already there unless we previously overwrote it.
+        }
+      });
+
+      // For English, restore from the data-en-original backup stored on first run.
+      if (lang === 'en') {
+        nodes.forEach(function (node) {
+          var original = node.getAttribute('data-en-original');
+          if (original !== null) node.textContent = original;
+        });
+      }
+
+      // Update active button
+      var buttons = document.querySelectorAll('.lang-switcher button');
+      buttons.forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    }
+
+    // Cache the English originals so we can restore them.
+    (function cacheEnglish() {
+      var nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(function (node) {
+        node.setAttribute('data-en-original', node.textContent.trim());
+      });
+    })();
+
+    // Wire up buttons
+    document.querySelectorAll('.lang-switcher button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLanguage(btn.getAttribute('data-lang'));
+      });
+    });
+
+    // Apply saved language or browser default
+    (function initLanguage() {
+      var saved = null;
+      try { saved = localStorage.getItem('site_lang'); } catch (e) {}
+      if (saved && translations[saved]) {
+        applyLanguage(saved);
+        return;
+      }
+      if (saved === 'en') {
+        applyLanguage('en');
+        return;
+      }
+      var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      if (browser === 'es' || browser === 'ca' || browser === 'pt') {
+        applyLanguage(browser);
+      } else {
+        applyLanguage('en');
+      }
+    })();
+
+    // Auto-sort talks by year, newest first.
+    (function () {
+      var grid = document.getElementById('talks-grid');
+      if (!grid) return;
+      var talks = Array.prototype.slice.call(grid.querySelectorAll('.talk'));
+      talks.sort(function (a, b) {
+        var ya = parseInt((a.querySelector('.talk-year') || {}).textContent || '', 10);
+        var yb = parseInt((b.querySelector('.talk-year') || {}).textContent || '', 10);
+        if (isNaN(ya)) ya = -Infinity;
+        if (isNaN(yb)) yb = -Infinity;
+        return yb - ya;
+      });
+      talks.forEach(function (el) { grid.appendChild(el); });
+    })();
+
+    // Copyright attribution on copy
+    document.addEventListener('copy', function (e) {
+      try {
+        var selection = window.getSelection ? window.getSelection().toString() : '';
+        if (!selection || selection.length < 80) return;
+
+        var attribution = '\n\n' + (copyrightLines[currentLang] || copyrightLines.en);
+        var payload = selection + attribution;
+
+        if (e.clipboardData && e.clipboardData.setData) {
+          e.clipboardData.setData('text/plain', payload);
+          e.clipboardData.setData('text/html', payload.replace(/\n/g, '<br>'));
+          e.preventDefault();
+        } else if (window.clipboardData && window.clipboardData.setData) {
+          window.clipboardData.setData('Text', payload);
+          e.preventDefault();
+        }
+      } catch (err) {
+        // Fail silently. Native copy still works.
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Signals in Context · Malex Salamanques</title>
+<meta name="description" content="Signals in Context: Using Cultural Affordances to Shape Preferable Futures. By Malex Salamanques." />
+<meta name="author" content="Malex Salamanques" />
+<meta name="copyright" content="© 2025–2026 Malex Salamanques. All rights reserved." />
+<meta property="article:author" content="Malex Salamanques" />
+<meta property="og:title" content="Signals in Context: Using Cultural Affordances to Shape Preferable Futures" />
+<meta property="og:description" content="By Malex Salamanques. © 2025–2026 Malex Salamanques. All rights reserved." />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #e6e6e0;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --maxw: 680px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 56px 32px 120px;
+  }
+
+  nav.top {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    margin-bottom: 64px;
+    color: var(--muted);
+  }
+
+  nav.top a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  nav.top a:hover { color: var(--ink); }
+
+  header.article {
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+
+  .byline {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.45rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+
+  p {
+    margin: 0 0 22px;
+  }
+
+  p.lede {
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+
+  em { font-style: italic; }
+  strong { font-weight: 500; }
+
+  a.inline {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  footer.colophon {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  footer.colophon p {
+    margin-bottom: 16px;
+  }
+
+  .copyright-top {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 12px 0 0;
+    font-style: italic;
+  }
+
+  .copyright-block {
+    margin-top: 56px;
+    padding: 28px 24px;
+    background: #f3f1ea;
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .copyright-block p {
+    margin: 0 0 10px;
+  }
+
+  .copyright-block p:last-child { margin-bottom: 0; }
+
+  .copyright-block .mark {
+    font-weight: 500;
+  }
+
+  .copyright-block a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-decoration: none;
+  }
+
+  .back-bottom {
+    margin-top: 56px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+
+  .back-bottom a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .back-bottom a:hover { color: var(--ink); }
+
+  /* Language switcher */
+  .lang-switcher {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    display: flex;
+    gap: 6px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .lang-switcher button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 4px 6px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: uppercase;
+    transition: color 0.15s ease;
+  }
+
+  .lang-switcher button:hover { color: var(--ink); }
+  .lang-switcher button.active { color: var(--ink); font-weight: 500; }
+  .lang-switcher .sep { color: var(--rule); user-select: none; }
+
+  @media (max-width: 540px) {
+    html, body { font-size: 17px; }
+    .wrap { padding: 40px 24px 80px; }
+    h2 { font-size: 1.25rem; }
+    .lang-switcher { top: 14px; right: 18px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button data-lang="en" class="active" aria-label="English">EN</button>
+    <span class="sep">·</span>
+    <button data-lang="es" aria-label="Español">ES</button>
+    <span class="sep">·</span>
+    <button data-lang="ca" aria-label="Català">CA</button>
+    <span class="sep">·</span>
+    <button data-lang="pt" aria-label="Português">PT</button>
+  </div>
+
+  <div class="wrap">
+
+    <nav class="top">
+      <a href="index.html" data-i18n="back_home">← Malex Salamanques</a>
+    </nav>
+
+    <header class="article">
+      <h1>Signals in Context: Using Cultural Affordances to Shape Preferable Futures</h1>
+      <p class="byline">
+        <span data-i18n="byline_1">By Malex Salamanques.</span><br>
+        <span data-i18n="byline_2">Based on a talk given at the Women Who Futures 24-hour takeover, in conversation with Gemma Jones.</span>
+      </p>
+      <p class="copyright-top" data-i18n="copyright_top">© 2025–2026 Malex Salamanques. All rights reserved.</p>
+      <p class="byline" style="margin-top:14px; font-style: italic;" data-i18n="article_lang_note">This essay is published in English only.</p>
+    </header>
+
+    <article>
+
+      <p class="lede">In foresight practice, signals get talked about as units of data. Practitioners describe themselves as "harvesting" or "scraping" them, as if the work were extractive. Strong signals are the obvious shifts already visible in the present. Weak signals are the stranger glimmers, the ones that feel further off. Either way, the language treats signals as if they were lying around waiting to be collected.</p>
+
+      <p>Coming from a semiotic background, I find this framing reductive. A signal that surfaces in the news, in a piece of legislation, in a new behavior or product, is the tip of something far larger. Underneath sit histories, mythologies, religious beliefs, linguistic patterns, geological and landscape memory, communication infrastructures. A signal arrives in our attention because of an entire substrate of cultural conditions. Those conditions produced the signal. They also shaped us into the kind of readers who can recognize it.</p>
+
+      <p>So when we interpret signals, we are not just clustering them. We are asking where they came from, why they have surfaced now, who is positioned to see them, and what the act of interpretation reveals about our own cultural location. There is no neat mechanic for this, but the habit of asking matters. All knowledge is situated, produced from somewhere by someone. The argument is Donna Haraway's, and it has shaped a generation of feminist futures practice. The habit of asking where a signal came from, who is positioned to see it, and what our interpretation reveals about our own location is part of that inheritance.</p>
+
+      <p>This is what I mean by signals in context. The signal alone is not the unit of analysis. The signal embedded in the cultural conditions that produced it is.</p>
+
+      <h2>A semiotic (re)frame: the residual, the dominant, the emergent</h2>
+
+      <p>A useful inheritance from semiotics is the RDE model: residual, dominant, emergent. It is a widely used frame in the discipline. In my own practice I work with a variation of it, replacing residual with rooted. The residual, as the term is usually used, suggests something left over, a remainder. Rooted points to something else: the beliefs and cultural ideas that sit deep in the roots of a culture or a context and that shape how people understand what is new and how they engage with it. The root is active. It is doing work in the present.</p>
+
+      <p>This is why the frame travels well into futures practice. It insists that past, present, and future are legible inside the same cultural moment.</p>
+
+      <p>The <strong>rooted</strong> is what sits deep in a culture. Traditions, popular beliefs, the collective unconscious, things that feel like second nature even when they are cultural constructs. They shape how the new is received.</p>
+
+      <p>The <strong>dominant</strong> is the norm of the day. Mainstream, often overused, readily available. Strong signals live here.</p>
+
+      <p>The <strong>emergent</strong> is the new way, the evolution, the reaction or recombination. The emergent usually responds to something broken or exhausted in the dominant, sometimes by reaching back into the rooted and recombining it with new material. Weak signals start here.</p>
+
+      <p>When we are asked to look into the future, or futures, we are usually being asked to look beyond the emergent. The emergent is already visible. The work is to read what is barely legible yet, and to do so without losing sight of the layers underneath. How did we get here. Why this emergence. What is it answering.</p>
+
+      <h2>Why some signals translate into action and others do not</h2>
+
+      <p>Two ideas have helped me think about this.</p>
+
+      <p>The first is the <em>finite pool of worry</em>, a concept developed by Elke Weber in research on risk perception and climate communication. Humans have a limited capacity to hold concerns. Distant threats, however serious, struggle to enter the pool unless they make direct contact with daily life. Political conflict, security risks, climate breakdown all compete for the same finite attention.</p>
+
+      <p>The second is the <em>future mundane</em>, a concept from speculative design that comes from Bruce Sterling and was expanded by Nick Foster. No matter how the world changes, an everyday persists. People still brush their teeth, eat breakfast, walk the dog, play sports. Life stretches and strains but does not stop being lived in small material moments. Futures arrive inside that texture, not above it.</p>
+
+      <p>These two ideas together explain why signals of change rarely generate immediate urgency. The climate crisis is the cleanest example. If you have lived through a flood or a fire, the signal is no longer abstract. If you have not, other concerns crowd it out. Meaningful change does not come from presenting more evidence of the tension. It comes from framing the tension so that it resonates emotionally with what people are already living.</p>
+
+      <p>But emotional resonance is only part of the picture. Perception also depends on what the context lets you do about it. That is where cultural affordances come in.</p>
+
+      <h2>Cultural affordances</h2>
+
+      <p>The concept of affordance comes from James J. Gibson, who used it to describe the opportunities for action that an object offers a perceiving body. A handle affords gripping. A flat surface at hip height affords leaning. I have been extending this into cultural territory.</p>
+
+      <p>Cultural affordances are the opportunities for action that a cultural context makes available. They are resources, sometimes material, sometimes symbolic, that contain what people perceive as possible or feasible in a given moment. The idea connects to actor-network theory, where objects, ideas, and cultural systems can solicit certain actions. It also connects to Tim Ingold's notion of dwelling, the suggestion that humans do not simply detect affordances but engage with them through culturally specific ways of being in the world.</p>
+
+      <p>Affordances can be social, technological, relational, symbolic. They shape which futures feel reachable and which feel impossible, regardless of what the data says.</p>
+
+      <p>Imagine a single signal: a dog being walked through a flooded street. Now place that signal under a cultural affordances lens. Different questions open up across different cultural domains.</p>
+
+      <p>In mobility and transport, how does flooding rearrange what counts as a route. In food and food systems, how do supply chains and household provisioning shift. In dwelling and landscape, what happens to attachment when land is no longer reliable. In health and the body, what new exposures and what new care practices emerge. In belonging, identity, and relationships, the questions get sharper still. How do we organize a sense of belonging in the face of migration, death, mourning, the dissolution of neighborhoods. What role does oral tradition play in building resilience. What is the function of elders, of rites of passage, of embedded rituals of support and care. What sustains faith when the land itself disappears. If my land goes under water, am I still the same person.</p>
+
+      <p>Signals translate into action when context provides affordances that let people make sense of the change. Affordances are the bridge between a signal and a lived response.</p>
+
+      <p>Which raises a useful question: which signals of change have the potential to transform the world if the affordances are present. And the more interesting one: can we design or install those affordances in the present, so that desirable futures become reachable.</p>
+
+      <h2>A worked example: mourning during the pandemic</h2>
+
+      <p>In 2020, during the first wave of COVID, Gemma Jones and I responded to an architectural open call together. Neither of us is an architect, which made being shortlisted satisfying. The brief asked for architectural responses to the pandemic. We chose to work on death, grief, and memorialization, because that territory was semiotically rich and because deeply rooted rituals were being disrupted in real time. People were grieving inside formats that could not hold what grieving requires. Funerals over Zoom is the most obvious one.</p>
+
+      <p>The question we asked was whether existing cultural affordances around mourning could be drawn on to design something that felt like a real alternative rather than a degraded substitute for what had been lost. As Gemma put it in the talk, we looked at "things like shrine building in public places, which is such a beautiful part of Latin American culture, which we don't do so much in European cities." There is also a Dutch tradition of marking points of significance to a loved one in public space, mapping grief onto place. These cultural affordances already existed somewhere in the world, even if not in the cultures where Zoom funerals were happening.</p>
+
+      <p>What we designed were micro-shrines that slot into corners of public and private spaces, each containing a kind of fingerprint of the person being remembered. Over time, a distributed map of mourning would build up across a city, a rhizome rather than a single monument.</p>
+
+      <p>The design itself was speculative. The point was the method. We drew on cultural affordances that were already present somewhere, rather than forcing a dominant Western practice into a context where it had stopped working.</p>
+
+      <h2>What this lens lets us do</h2>
+
+      <p>Cultural affordances let us see how the possible becomes thinkable. Many possible futures are technically available but feel out of reach because no one can picture inhabiting them. Affordances are part of how that imaginative reach gets built or blocked.</p>
+
+      <p>This way of thinking can also reveal why some futures are more attainable than others. If the cultural capacity is missing, the future will not arrive regardless of how desirable it is on paper. We can work backwards from a preferable future and ask what affordances would have to be installed now to make the pathway exist.</p>
+
+      <p>It also reframes resistance to change. People are resistant when the changes they are asked to make carry too much friction against their existing affordances. The climate transition is full of this. We know what needs to shift. The asks are too high-friction, the counterforces too well-organized, the cultural scaffolding too thin.</p>
+
+      <p>And it surfaces a question of power. Who designs the affordances. Who has the capacity to build, install, or block them. Affordances are unequally distributed, and the question of who gets to shape them is itself a futures question.</p>
+
+      <h2>Signals through this lens</h2>
+
+      <p>Three signals, briefly, to show how the lens shifts the questions.</p>
+
+      <p><strong>Microplastics detected in human fetuses.</strong> The standard foresight read jumps to environmental regulation or material substitution. The cultural affordances read asks different things. Will this trigger a midwife-led environmental movement. Will it produce new concepts of spiritual purity, or new classifications of bodies by plastic density. How does this disturb existing distinctions between good and bad plastic, between silicone implants and contaminating particles. How does it reshape the figure of the other, who is now defined partly by what is inside them.</p>
+
+      <p><strong>Climate change reshaping the Mediterranean diet.</strong> Beyond the obvious extrapolations of synthetic foods and alternative proteins, the affordances question is about what happens to a diet that is also a daily rhythm, a set of rituals, a way of gathering. Does a new nostalgic myth emerge, with rituals attached to substitute objects. What would the sardine-ification of insects actually look like at the level of a Tuesday lunch.</p>
+
+      <p><strong>The global decline of democracy.</strong> Recent measurements show the world is less democratic than it was fifteen years ago. The cultural affordances question is about which practices and rituals of democratic life are being eroded, and which new ones might be emerging. Singapore's experiments with direct elections opened a new perception of citizen power. What would it look like to design governance models drawing on more-than-human intelligence. What is the cultural work being done by the rise of rigid political identities, and how does that connect to shifting models of masculinity, femininity, and gender.</p>
+
+      <p>In each case, the lens does not replace the standard foresight read. It thickens it.</p>
+
+      <h2>The future is something to be made</h2>
+
+      <p>The future is not an inevitable outcome. It is closer to fiction in the sense that it is yet to be made, and therefore a space to be designed. Cultural affordances offer a practical way of thinking about how to make it.</p>
+
+      <p>That means making desirable futures visible, so that people can imagine working towards them. It means expanding the possibilities for action in the present, since many preferable futures can be seeded now. It means shifting power over who shapes the future, since affordances are unequally distributed and the question of who builds them matters. It means prototyping new affordances early, because futures get built out of what people get used to today.</p>
+
+      <p>I started by saying that a signal is the tip of something much larger. The work of futures, as I understand it, is the work of staying with that larger thing. The histories underneath the signal. The beliefs that make it legible. The conditions that produced both the signal and the readers who can recognize it. A future that ignores these layers is not really a future. It is a forecast made from the surface. The futures worth working toward are the ones we have looked at all the way down.</p>
+
+      <h2>Epilogue</h2>
+
+      <p>Ultimately Cultural Affordances shape the future by unveiling what people perceive as possible, desirable, or inevitable within a given context. Since affordances are the opportunities for action that emerge from cultural, technological, and social conditions, they act as filters and catalysts that determine which futures are imagined, pursued, or rejected.</p>
+
+    </article>
+
+    <div class="copyright-block">
+      <p><span class="mark" data-i18n="copyright_mark">© 2025–2026 Malex Salamanques. All rights reserved.</span></p>
+      <p data-i18n="copyright_body">This essay was originally published at malexsalamanques.com. The text is protected by copyright. For republication, translation, citation beyond a short fair-use quotation, or any commercial use, please request permission via the author's LinkedIn before reproducing the work.</p>
+    </div>
+
+    <footer class="colophon">
+      <p>
+        Malex Salamanques is a British-Venezuelan creative strategist, semiotician, and futures design consultant. She is Director at Space Doctors, where she leads work in Culture and Semiotics, Speculative Design, and Creative Strategy, and a fellow of the School of Critical Design. Over more than twenty years she has developed methodological frameworks at the intersection of semiotics, design research, and futures practice, including Design Recoding, Speculative Strategy, Sensory Semiotics, and Rituals Design. Her work spans Asia, the Middle East, Latin America, Europe, and the US, with clients including Coca-Cola, Meta, Samsung, Häagen-Dazs, Greenpeace, and McMillan. The talk that this article draws on was delivered in conversation with Gemma Jones.
+      </p>
+    </footer>
+
+    <p class="back-bottom">
+      <a href="index.html" data-i18n="back_bottom">← Back to Malex Salamanques</a>
+    </p>
+
+  </div>
+
+  <script>
+    // ============================================================
+    // Translations for the article wrapper (chrome only).
+    // The essay body remains in English; only the surrounding UI
+    // and copyright text switches with the language selector.
+    // ============================================================
+    var translations = {
+      es: {
+        back_home: "← Malex Salamanques",
+        byline_1: "Por Malex Salamanques.",
+        byline_2: "Basado en una charla dada en el takeover de 24 horas de Women Who Futures, en conversación con Gemma Jones.",
+        copyright_top: "© 2025–2026 Malex Salamanques. Todos los derechos reservados.",
+        article_lang_note: "Este ensayo está publicado únicamente en inglés.",
+        copyright_mark: "© 2025–2026 Malex Salamanques. Todos los derechos reservados.",
+        copyright_body: "Este ensayo fue publicado originalmente en malexsalamanques.com. El texto está protegido por copyright. Para su republicación, traducción, cita más allá de un uso justo breve, o cualquier uso comercial, por favor solicite permiso a través del LinkedIn de la autora antes de reproducir la obra.",
+        back_bottom: "← Volver a Malex Salamanques"
+      },
+      ca: {
+        back_home: "← Malex Salamanques",
+        byline_1: "Per Malex Salamanques.",
+        byline_2: "Basat en una xerrada feta al takeover de 24 hores de Women Who Futures, en conversa amb Gemma Jones.",
+        copyright_top: "© 2025–2026 Malex Salamanques. Tots els drets reservats.",
+        article_lang_note: "Aquest assaig està publicat únicament en anglès.",
+        copyright_mark: "© 2025–2026 Malex Salamanques. Tots els drets reservats.",
+        copyright_body: "Aquest assaig va ser publicat originalment a malexsalamanques.com. El text està protegit per copyright. Per a la seva republicació, traducció, citació més enllà d'un ús just breu, o qualsevol ús comercial, si us plau sol·liciteu permís a través del LinkedIn de l'autora abans de reproduir l'obra.",
+        back_bottom: "← Tornar a Malex Salamanques"
+      },
+      pt: {
+        back_home: "← Malex Salamanques",
+        byline_1: "Por Malex Salamanques.",
+        byline_2: "Baseado numa palestra dada no takeover de 24 horas da Women Who Futures, em conversa com Gemma Jones.",
+        copyright_top: "© 2025–2026 Malex Salamanques. Todos os direitos reservados.",
+        article_lang_note: "Este ensaio está publicado apenas em inglês.",
+        copyright_mark: "© 2025–2026 Malex Salamanques. Todos os direitos reservados.",
+        copyright_body: "Este ensaio foi originalmente publicado em malexsalamanques.com. O texto está protegido por direitos de autor. Para republicação, tradução, citação para além de uma breve utilização justa, ou qualquer uso comercial, por favor solicite permissão através do LinkedIn da autora antes de reproduzir a obra.",
+        back_bottom: "← Voltar para Malex Salamanques"
+      }
+    };
+
+    var copyrightLines = {
+      en: 'From "Signals in Context: Using Cultural Affordances to Shape Preferable Futures" by Malex Salamanques.\nOriginally published at https://malexsalamanques.com\n© 2025-2026 Malex Salamanques. All rights reserved. Republication or substantial reproduction requires written permission.',
+      es: 'De "Signals in Context: Using Cultural Affordances to Shape Preferable Futures" por Malex Salamanques.\nPublicado originalmente en https://malexsalamanques.com\n© 2025-2026 Malex Salamanques. Todos los derechos reservados. La republicación o reproducción sustancial requiere permiso escrito.',
+      ca: 'De "Signals in Context: Using Cultural Affordances to Shape Preferable Futures" per Malex Salamanques.\nPublicat originalment a https://malexsalamanques.com\n© 2025-2026 Malex Salamanques. Tots els drets reservats. La republicació o reproducció substancial requereix permís escrit.',
+      pt: 'De "Signals in Context: Using Cultural Affordances to Shape Preferable Futures" por Malex Salamanques.\nPublicado originalmente em https://malexsalamanques.com\n© 2025-2026 Malex Salamanques. Todos os direitos reservados. A republicação ou reprodução substancial requer permissão escrita.'
+    };
+
+    var currentLang = 'en';
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      var dict = translations[lang];
+      var nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(function (node) {
+        var key = node.getAttribute('data-i18n');
+        if (lang === 'en') {
+          var original = node.getAttribute('data-en-original');
+          if (original !== null) node.textContent = original;
+        } else if (dict && dict[key]) {
+          node.textContent = dict[key];
+        }
+      });
+
+      var buttons = document.querySelectorAll('.lang-switcher button');
+      buttons.forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    }
+
+    // Cache English originals
+    (function cacheEnglish() {
+      document.querySelectorAll('[data-i18n]').forEach(function (node) {
+        node.setAttribute('data-en-original', node.textContent.trim());
+      });
+    })();
+
+    // Wire up buttons
+    document.querySelectorAll('.lang-switcher button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLanguage(btn.getAttribute('data-lang'));
+      });
+    });
+
+    // Apply saved language or browser default
+    (function initLanguage() {
+      var saved = null;
+      try { saved = localStorage.getItem('site_lang'); } catch (e) {}
+      if (saved && (saved === 'en' || translations[saved])) {
+        applyLanguage(saved);
+        return;
+      }
+      var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      if (browser === 'es' || browser === 'ca' || browser === 'pt') {
+        applyLanguage(browser);
+      } else {
+        applyLanguage('en');
+      }
+    })();
+
+    // Copyright attribution on copy
+    document.addEventListener('copy', function (e) {
+      try {
+        var selection = window.getSelection ? window.getSelection().toString() : '';
+        if (!selection || selection.length < 80) return;
+
+        var attribution = '\n\n' + (copyrightLines[currentLang] || copyrightLines.en);
+        var payload = selection + attribution;
+
+        if (e.clipboardData && e.clipboardData.setData) {
+          e.clipboardData.setData('text/plain', payload);
+          e.clipboardData.setData('text/html', payload.replace(/\n/g, '<br>'));
+          e.preventDefault();
+        } else if (window.clipboardData && window.clipboardData.setData) {
+          window.clipboardData.setData('Text', payload);
+          e.preventDefault();
+        }
+      } catch (err) {
+        // Fail silently. Native copy still works.
+      }
+    });
+  </script>
+</body>
+</html>
